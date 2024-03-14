@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:46 by nfararan          #+#    #+#             */
-/*   Updated: 2024/03/14 16:20:31 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:58:33 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static void	ft_handle_fmt(va_list args, char spec, int *len)
 	else if (spec == 'p')
 	{}
 	else if (spec == 'd')
-	{}
+		ft_putdi(va_arg(args, int), len);
 	else if (spec == 'i')
-	{}
+		ft_putdi(va_arg(args, int), len);
 	else if (spec == 'u')
 	{}
 	else if (spec == 'x')
@@ -55,6 +55,32 @@ void	ft_puts(char *s, int *len)
 		size++;
 	write(1, s, size);
 	*len += size;
+}
+
+void	ft_putdi(int nb, int *len)
+{
+	if (nb == INT_MIN)
+	{
+		ft_puts("-2147483648", len);
+		return ;
+	}
+	if (nb == INT_MAX)
+	{
+		ft_puts("2147483647", len);
+		return ;
+	}
+	if (nb < 0)
+	{
+		ft_putc('-', len);
+		ft_putdi(-nb, len);
+	}
+	else if (nb > 9)
+	{
+		ft_putdi(nb / 10, len);
+		ft_putdi(nb % 10, len);
+	}
+	else
+		ft_putc(nb + '0', len);
 }
 
 int	ft_printf(const char *fmt, ...)
