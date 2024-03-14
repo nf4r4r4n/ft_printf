@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:46 by nfararan          #+#    #+#             */
-/*   Updated: 2024/03/14 17:58:33 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:12:24 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ static void	ft_handle_fmt(va_list args, char spec, int *len)
 		ft_puts(va_arg(args, char *), len);
 	else if (spec == 'p')
 	{}
-	else if (spec == 'd')
-		ft_putdi(va_arg(args, int), len);
-	else if (spec == 'i')
+	else if (spec == 'd' || spec == 'i')
 		ft_putdi(va_arg(args, int), len);
 	else if (spec == 'u')
-	{}
+		ft_putu(va_arg(args, unsigned int), len);
 	else if (spec == 'x')
 	{}
 	else if (spec == 'X')
