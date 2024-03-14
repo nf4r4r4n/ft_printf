@@ -6,7 +6,7 @@
 /*   By: nfararan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:12:45 by nfararan          #+#    #+#             */
-/*   Updated: 2024/03/14 19:46:58 by nfararan         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:10:45 by nfararan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,6 @@ typedef enum e_bool
 /* ----- INT_MAX ----- */
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
-# endif
-
-/* ----- LONG_MIN ----- */
-# ifndef LONG_MIN
-#  define LONG_MIN -9223372036854775808
-# endif
-
-/* ----- LONG_MAX ----- */
-# ifndef LONG_MAX
-#  define LONG_MAX 9223372036854775807
 # endif
 
 /* ----- UINT MAX ----- */
